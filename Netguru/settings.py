@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1',
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'api.apps.ApiConfig',
     'rest_framework',
     'django.contrib.admin',
@@ -130,7 +131,8 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = (
+    'whitenoise.storage.CompressedManifestStaticFilesStorage')
 
 
 # Default primary key field type
